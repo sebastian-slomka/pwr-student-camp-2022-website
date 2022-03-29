@@ -9,6 +9,15 @@
 !public/robots.txt
 
 !src/
+!src/components/
+!src/components/Navbar/
+!src/components/Navbar/index.js
+!src/components/Navbar/navbar-elements.js
+!src/components/Sidebar/
+!src/components/Sidebar/index.js
+!src/components/Sidebar/sidebar-elements.js
+!src/pages/
+!src/pages/index.js
 !src/App.css
 !src/App.js
 !src/App.test.js
