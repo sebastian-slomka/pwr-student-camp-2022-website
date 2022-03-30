@@ -8,20 +8,20 @@ RUN apk add \
 
 SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
 
-ENV USER="website"
-ENV GROUP="website"
-RUN addgroup -S ${GROUP} \
-  && adduser -S ${USER} -G ${GROUP} -s /bin/sh -D
+# ENV USER="root"
+# ENV GROUP="website"
+# RUN addgroup -S ${GROUP} \
+#   && adduser -S ${USER} -G ${GROUP} -s /bin/sh -D
 
-USER ${USER}
+# USER ${USER}
 
-WORKDIR /home/${USER}
+WORKDIR /home/
 
-COPY --chown=${USER}:${GROUP} package.json .
-COPY --chown=${USER}:${GROUP} package-lock.json .
+COPY package.json .
+COPY package-lock.json .
 RUN npm install --silent
 
-WORKDIR /home/${USER}/app
+WORKDIR /home/app
 
 EXPOSE 3000
 
